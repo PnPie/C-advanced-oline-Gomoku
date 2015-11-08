@@ -1,10 +1,10 @@
-# Oline advanced Gomoku
+# Advanced online Gomoku
 An online advanced Gomoku game in terminal written in C
 
 Gomoku is an abstract strategy board game, also called Five in a Row. Here our advanced Gomoku allows to have more than 2 players, and we can also define the size of board and even the number of stones required to win.
 
 ## To use
-Use Makefile to compile and generate two programs, the **serveur** and the **client**
+Use Makefile to compile and generate two programs, the **serveur** and the **client**  
     make
 -launch the serveur program with a indicated port
     ./serveur 8000
