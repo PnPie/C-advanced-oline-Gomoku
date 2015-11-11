@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<sys/shm.h>
 
-#include"protoserv.h"
+#include"server_lib.h"
 
 int shmid,shmid_note;
 point *shmaddr;

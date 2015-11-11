@@ -6,7 +6,7 @@
 #include<arpa/inet.h>
 #include<errno.h>
 
-#include"protoclient.h"
+#include"client_lib.h"
 
 #define BUF_LEN 256
 

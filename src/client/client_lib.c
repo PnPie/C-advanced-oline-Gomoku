@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "protoclient.h"
+#include "client_lib.h"
 
 #define TAILLE 5
 
@@ -24,7 +22,6 @@ g[axe vertical descendant][axe horizontal de gauche à droite]
   -    -   -   -   -
 
 */ 
-
 
 struct box {
   int checked;

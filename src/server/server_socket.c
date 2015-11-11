@@ -7,7 +7,7 @@
 #include<arpa/inet.h>
 #include<sys/shm.h>
 
-#include"protoserv.h"
+#include"server_lib.h"
 
 int sock,res;
 int sock_pipe[100];
@@ -138,7 +138,7 @@ int main(int argc,char **argv){
 		}
 		// bien connecte
 		else{
-		        // On cree le processure en utilisant fork(), le fils pour l'interaction avec le client, le pere juste pour faire le loop
+		    // On cree le processure en utilisant fork(), le fils pour l'interaction avec le client, le pere juste pour faire le loop
 			pid=fork();
 			switch(pid){
 			case -1:
@@ -150,7 +150,7 @@ int main(int argc,char **argv){
 			  recevoir(sock_pipe[count],buf_read);
 			
 			  // tester le mot de passe, ici pour verifier si c'est le admin
-			  fp=fopen("admin","r");
+			  fp=fopen("./password/admin","r");
 			  while(fscanf(fp,"%s",buf_pwd)!=EOF){
 			    if(!strcmp(buf_read,buf_pwd)){
 			      int i;
@@ -193,7 +193,7 @@ int main(int argc,char **argv){
 			  }
 
 			  // pour tester si c'est le client
-			  fp2=fopen("cli","r");
+			  fp2=fopen("./password/cli","r");
 			  while(fscanf(fp2,"%s",buf_pwd)!=EOF){
 			    if(!strcmp(buf_read,buf_pwd)){
 			      int x,y,n,i;

@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef _CLIENT_LIB_H_
+#define _CLIENT_LIB_H_
 
 struct box;
 
@@ -25,4 +25,4 @@ int check_col_S_N(grille g, int x, int y); //same S-N column
 
 int is_winning (grille g,int x, int y); // Check if there is any 5-checked-boxes alignement that uses box (x,y)
 
-
+#endif

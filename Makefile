@@ -1,24 +1,30 @@
 CC = gcc -Wall
+CLIENT_DIR = ./src/client
+SERVER_DIR = ./src/server
+BIN_DIR = ./bin
 
-all: serveur client
+SERVER_EXE = ${BIN_DIR}/server
+CLIENT_EXE = ${BIN_DIR}/client
 
-serveur: comserv.o gestserv.o
-	$(CC) -o serveur $^
+all: $(SERVER_EXE) $(CLIENT_EXE)
 
-client: comcli.o gestcli.o
-	$(CC) -o client $^
+$(SERVER_EXE): ${SERVER_DIR}/server_socket.o ${SERVER_DIR}/server_lib.o
+	$(CC) -o $@ $^
 
-comserv.o: comserv.c protoserv.h
+$(CLIENT_EXE): ${CLIENT_DIR}/client_socket.o ${CLIENT_DIR}/client_lib.o
+	$(CC) -o $@ $^
+
+server_socket.o: ${SERVER_DIR}/server_socket.c ${SERVER_DIR}/server_lib.h
 	$(CC) -c $<
 
-gestserv.o: gestserv.c protoserv.h
+server_lib.o: ${SERVER_DIR}/server_lib.c ${SERVER_DIR}/server_lib.h
 	$(CC) -c $<
 
-comcli.o: comcli.c protoclient.h
+client_socket.o: ${CLIENT_DIR}/client_socket.c ${CLIENT_DIR}/client_lib.h
 	$(CC) -c $<
 
-gestcli.o: gestcli.c protoclient.h
+client_lib.o: ${CLIENT_DIR}/client_lib.c ${CLIENT_DIR}/client_lib.h
 	$(CC) -c $<
 
 clean:
-	rm comserv.o gestserv.o comcli.o gestcli.o
+	rm ${SERVER_DIR}/server_socket.o ${SERVER_DIR}/server_lib.o ${CLIENT_DIR}/client_socket.o ${CLIENT_DIR}/client_lib.o ${BIN_DIR}/*
