@@ -10,14 +10,14 @@ Use Makefile to compile and generate two executable programs **server** and **cl
 Launch server program with an indicated port:  
 `./server 8000`
 
-Launch client program with the address and the port of server (ex. to connect to it locally):
+Launch client program with the address and the port of server (ex. to connect to it locally):  
 `./client 127.0.0.1 8000`
 
-Then you will be asked for a password to identify whether you are an *administrator* or a *client player*.
+Then you will be asked for a password to identify whether you are an **administrator** or a **client player**.
 
--*administrator*: define the rule of this match.  
-*number of clients
-*size of board
-*number of stones in a row to win
+- administrator: define the rule of this match.  
+* number of clients
+* size of board
+* number of stones in a row to win
 
--*client*: connect to the server to play.
+- client: connect to the server to play.
