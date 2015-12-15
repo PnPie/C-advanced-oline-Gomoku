@@ -1,10 +1,10 @@
 #ifndef _SERVER_LIB_H_
 #define _SERVER_LIB_H_
 
-// definir le struct de chaque point
 #define true 1;
 #define false 0;
 
+// The structure of every point
 typedef struct{
 	char value;
 	int cas;

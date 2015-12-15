@@ -15,10 +15,6 @@ socklen_t client_len;
 char buf_read[BUF_LEN];
 char buf_write[BUF_LEN];
 
-struct box {
-    int checked;
-};
-
 // envoyer les donnees buf_write a un socket
 void envoyer(int sock,char *buf_write){
     res=write(sock,buf_write,strlen(buf_write)+1);
@@ -39,7 +35,7 @@ void recevoir(int sock,char *buf_read){
 
 int main(int argc,char **argv){
     int i,j,n;
-    grille g;
+    line_entry_table g;
     if(argc!=3){
         printf("Veuillez saisir les parametres corrects comme:\n");
         printf("./programme adresse_serveur port_serveur\n");
@@ -80,7 +76,7 @@ int main(int argc,char **argv){
             envoyer(sock,"OK1");
             recevoir(sock,buf_read);
             n=atoi(buf_read);
-            g=creer_grille(n,n);
+            g=create_board(n,n);
 
             for(i=0;i<n;i++){
                 for(j=0;j<n;j++){
@@ -100,7 +96,7 @@ int main(int argc,char **argv){
                     g[i][j].checked=atoi(buf_read);
                 }
             }
-            affiche_grille(g,n,n);	    
+            print_board(g,n,n);	    
             printf("Saisir le coordonnee svp:");
         }
         // Pour le cas reussi
