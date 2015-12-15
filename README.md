@@ -15,9 +15,6 @@ Launch client program with the address and the port of server (ex. to connect to
 
 Then you will be asked for a password to identify whether you are an **administrator** or a **client player**.
 
-- administrator: define the rule of this match.  
-> number of clients.
-> size of board.
-> number of stones in a row to win.
+- administrator: define the rule of this match, including *number of clients*, *size of board*, *number of stones in a row to win*.
 
 - client: connect to the server to play.
