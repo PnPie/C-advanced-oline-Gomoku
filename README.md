@@ -4,17 +4,20 @@ An online advanced Gomoku game in terminal written in C
 Gomoku is an abstract strategy board game, also called Five in a Row. Here our advanced Gomoku allows to have more than 2 players, and we can also define the size of board and even the number of stones required to win.
 
 ## To use
-Use Makefile to compile and generate two executable programs **serveur** and **client** in folder *bin*:  
+Use Makefile to compile and generate two executable programs **server** and **client** in folder *bin*:  
 `make`
 
-Launch the serveur program with a indicated port:  
-`./serveur 8000`
+Launch server program with an indicated port:  
+`./server 8000`
 
-Launch the client program with address and port of the server, here for example we connect to it locally:  
+Launch client program with the address and the port of server (ex. to connect to it locally):
 `./client 127.0.0.1 8000`
 
-Then it will ask you for a password to identify whether you are an administrator or a client player.  
+Then you will be asked for a password to identify whether you are an *administrator* or a *client player*.
 
-The administrator can define the rule of this match, including the number of client, the size of board, and the number of stones in a row to win.  
+-*administrator*: define the rule of this match.  
+*number of clients
+*size of board
+*number of stones in a row to win
 
-Then the client can connect to the server to play.
+-*client*: connect to the server to play.
