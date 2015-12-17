@@ -36,6 +36,9 @@ int *shmaddr_para;
 
 /*
  * Create sharing memory
+ * shmaddr_board: 1000 Bytes
+ * shmaddr_score:  100 Bytes
+ * shmaddr_para :  100 Bytes
  *
  */
 void create_shm(){
@@ -81,20 +84,20 @@ void create_shm(){
     printf("Shared memory segment created.\n");
 }
 
-// envoyer les donnees buf_write a un socket
-void envoyer(int sock,char *buf_write){
-    res=write(sock,buf_write,strlen(buf_write)+1);
-    if(res==-1){
-        perror("echec de write");
+// write content(buf_write) in socket
+void envoyer(int sock, char *buf_write){
+    res = write(sock, buf_write, strlen(buf_write)+1);
+    if(res == -1){
+        perror("socket write error.");
         exit(1);
     }
 }
 
-// recevoir les donnees d'un socket et le stoker dans buf_read
-void recevoir(int sock,char *buf_read){
-    res=read(sock,buf_read,256);
-    if(res==-1){
-        perror("echec de read");
+// read content from socket to buf_read
+void recevoir(int sock, char *buf_read){
+    res = read(sock, buf_read, 256);
+    if(res == -1){
+        perror("socket read error.");
         exit(1);
     }
 }
